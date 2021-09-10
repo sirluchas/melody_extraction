@@ -1,0 +1,86 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'melody_extraction'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=melody_extraction"
+                ],
+                "filter": {
+                    "name": "melody_extraction",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'melody_extraction'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=melody_extraction",
+                    "--package=melody_extraction"
+                ],
+                "filter": {
+                    "name": "melody_extraction",
+                    "kind": "bin"
+                }
+            },
+            "args": [
+                "audio/variations_vagabondes.mp3",
+                "salamon"
+            ],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'melody_extraction'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=melody_extraction",
+                    "--package=melody_extraction"
+                ],
+                "filter": {
+                    "name": "melody_extraction",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug benchmark 'my_benchmark'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bench=my_benchmark",
+                    "--package=melody_extraction"
+                ],
+                "filter": {
+                    "name": "my_benchmark",
+                    "kind": "bench"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

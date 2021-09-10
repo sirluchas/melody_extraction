@@ -1,0 +1,20 @@
+name: melody_extraction
+version: "1.0"
+about: Melody estimation from polyphonic music
+args:
+    - INPUT:
+        about: Sets the audio file to use
+        required: true
+        index: 1
+subcommands:
+    - salamon:
+        about: Polyphonic melody extraction algorithm by Salamon (2013)
+        args:
+            - PLOTFILE:
+                short: p
+                about: Plot the melody in the time-domain
+                takes_value: true
+            - MIDIFILE:
+                short: m
+                about: Midi output file of the melody
+                takes_value: true

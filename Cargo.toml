@@ -1,0 +1,43 @@
+[package]
+name = "melody_extraction"
+version = "0.1.0"
+authors = ["removed <removed@removed.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# Decoding audio files
+minimp3 = "0.5"
+
+# Equal loudness filter
+digital-filter = { git = "https://github.com/ReeceStevens/digital-filter" }
+
+# STFT
+stft = { git = "https://github.com/snd/stft" }
+num = "0.2.0"
+
+# Salience frame peaks
+streaming-stats = "0.2"
+
+# Mean filter
+moving_avg = "0.2.0"
+
+# Plots
+plotters = "^0.3.1"
+
+# MIDI writing
+aubio-rs = "0.2.0"
+ghakuf = "0.5.6"
+median = "0.3.2"
+
+# CLI parsing
+clap = { version = "3.0.0-beta.2", features = ["yaml"] }
+
+# benching quickstart
+[dev-dependencies]
+criterion = "0.3"
+
+[[bench]]
+name = "my_benchmark"
+harness = false
